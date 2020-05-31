@@ -11,5 +11,9 @@ namespace Writer
         static void Main(string[] args)
         {
         }
+        bool WriteToDumpingBuffer()
+        {
+            return true;
+        }
     }
 }
