@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DumpingBuffer", "DumpingBuf
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database", "Database\Database.sqlproj", "{50FB2C1F-A765-4E18-89C4-4F643855E5AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteka", "Biblioteka\Biblioteka.csproj", "{63F97BDD-5394-4BD2-AB17-3DF9BB360F1F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{50FB2C1F-A765-4E18-89C4-4F643855E5AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50FB2C1F-A765-4E18-89C4-4F643855E5AE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{50FB2C1F-A765-4E18-89C4-4F643855E5AE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{63F97BDD-5394-4BD2-AB17-3DF9BB360F1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63F97BDD-5394-4BD2-AB17-3DF9BB360F1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63F97BDD-5394-4BD2-AB17-3DF9BB360F1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63F97BDD-5394-4BD2-AB17-3DF9BB360F1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
