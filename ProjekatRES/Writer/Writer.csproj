@@ -54,6 +54,10 @@
       <Project>{63f97bdd-5394-4bd2-ab17-3df9bb360f1f}</Project>
       <Name>Biblioteka</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DumpingBuffer\DumpingBuffer.csproj">
+      <Project>{f190c0ff-5f7b-4d8a-80af-86477bd7fdb8}</Project>
+      <Name>DumpingBuffer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
