@@ -43,11 +43,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Description.cs" />
+    <Compile Include="GetChanges.cs" />
+    <Compile Include="HistoricalProperty.cs" />
+    <Compile Include="LD.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Biblioteka\Biblioteka.csproj">
+      <Project>{63F97BDD-5394-4BD2-AB17-3DF9BB360F1F}</Project>
+      <Name>Biblioteka</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DumpingBuffer\DumpingBuffer.csproj">
+      <Project>{f190c0ff-5f7b-4d8a-80af-86477bd7fdb8}</Project>
+      <Name>DumpingBuffer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
