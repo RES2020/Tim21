@@ -8,11 +8,20 @@ using System.Threading.Tasks;
 
 namespace DumpingBuffer
 {
-    public static class Bafer
+    public class Bafer
     {
-        public static void Obrada(Code kod,Value vrijednost)
+
+        public List<DumpingProperty> DumpingPropertyCollection { get; set; }
+        public Bafer()
         {
-            List<DumpingProperty> DumpingPropertyCollection = new List<DumpingProperty>();
+            DumpingPropertyCollection = new List<DumpingProperty>();
+
+        }
+
+        public void Obrada(Code kod,Value vrijednost)
+        {
+           // List<DumpingProperty> DumpingPropertyCollection = new List<DumpingProperty>();
+           
             int dataset = -1;
 
             DumpingProperty dp = new DumpingProperty(kod, vrijednost);
@@ -45,6 +54,8 @@ namespace DumpingBuffer
             sw.WriteLine(poruka);
             sw.Close();
             stream.Close();
+
+            
         }
     }
 }

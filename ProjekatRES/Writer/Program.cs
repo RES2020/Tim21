@@ -14,6 +14,7 @@ namespace Writer
     {
         static void Main(string[] args)
         {
+            
 
             string pr = Directory.GetCurrentDirectory();
             string projectDirectory = Directory.GetParent(pr).Parent.FullName;
@@ -46,6 +47,9 @@ namespace Writer
             Console.WriteLine("Saljem podatke DumpingBafferu...za 5 sec");
             Thread.Sleep(5000);
 
+
+            Bafer baf = new Bafer();
+
             int i = 0;
             foreach (Code item in kodovi)
             {
@@ -58,7 +62,7 @@ namespace Writer
                 sw.WriteLine(poruka);
                 sw.Close();
                 stream1.Close();
-                Bafer.Obrada(item, vrijednosti[i]);
+                baf.Obrada(item, vrijednosti[i]);
                 
                 i++;
 
