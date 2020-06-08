@@ -14,7 +14,14 @@ namespace Writer
     {
         static void Main(string[] args)
         {
-            string path = "C:/Users/Doktor/Documents/RES/ProjekatRES/Biblioteka/bin/Debug/DataW.txt";
+
+            string pr = Directory.GetCurrentDirectory();
+            string projectDirectory = Directory.GetParent(pr).Parent.FullName;
+            string path = Path.Combine(projectDirectory, "DataW.txt");
+
+            string projectDirectory2 = Directory.GetParent(pr).Parent.Parent.FullName;
+            string path1 = Path.Combine(projectDirectory2 + @"\DumpingBuffer", "Data.txt");
+
 
             List<Code> kodovi = new List<Code>();
             List<Value> vrijednosti = new List<Value>();
@@ -42,7 +49,7 @@ namespace Writer
             int i = 0;
             foreach (Code item in kodovi)
             {
-                string path1 = "C:/Users/Doktor/Documents/RES/ProjekatRES/DumpingBuffer/bin/Debug/Data.txt";
+                
 
 
                 FileStream stream1 = new FileStream(path1, FileMode.Append);

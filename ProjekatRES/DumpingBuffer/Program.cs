@@ -12,12 +12,27 @@ namespace DumpingBuffer
     {
         static void Main(string[] args)
         {
+            List<DumpingProperty> DumpingPropertyCollection = new List<DumpingProperty>();
+            Random r = new Random();
+            int data;
+
+
+            //CollectionDescription cd1 = new CollectionDescription(r.Next(), DumpingPropertyCollection, 1);
+            //CollectionDescription cd2 = new CollectionDescription(r.Next(), DumpingPropertyCollection, 2);
+            //CollectionDescription cd3 = new CollectionDescription(r.Next(), DumpingPropertyCollection, 3);
+            //CollectionDescription cd4 = new CollectionDescription(r.Next(), DumpingPropertyCollection, 4);
+            //CollectionDescription cd5 = new CollectionDescription(r.Next(), DumpingPropertyCollection, 5);
+
+            string pr = Directory.GetCurrentDirectory();
+            string projectDirectory = Directory.GetParent(pr).Parent.FullName;
+            string path = Path.Combine(projectDirectory, "Data.txt");
+
 
             while (true)
             {
 
 
-                string path = "C:/Users/Doktor/Documents/RES/ProjekatRES/DumpingBuffer/bin/Debug/Data.txt";
+               
 
                 if (new FileInfo(path).Length != 0)
                 {
