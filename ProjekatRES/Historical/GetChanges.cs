@@ -11,7 +11,7 @@ namespace Historical
     {
         public static Value GetChangesForInterval(Code kod)
         {
-            return //kad skontam bazu nastavljam
+            return; //kad skontam bazu nastavljam
         }
     }
 }
