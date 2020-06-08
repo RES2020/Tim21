@@ -43,24 +43,23 @@ namespace Writer
 
             
 
-            Console.WriteLine("Saljem podatke DumpingBafferu...za 10 sec");
-            Thread.Sleep(15000);
+            Console.WriteLine("Saljem podatke DumpingBafferu...za 5 sec");
+            Thread.Sleep(5000);
 
             int i = 0;
             foreach (Code item in kodovi)
             {
-                
-
-
-                FileStream stream1 = new FileStream(path1, FileMode.Append);
+                string poruka = "Writer poslao podatke: Code: " + item.ToString() + " Value: " + vrijednosti[i].timestamp + " " + vrijednosti[i].id + " " + vrijednosti[i].potrosnja + Environment.NewLine;
+                string pr1 = Directory.GetCurrentDirectory();
+                string projectDirectory3 = Directory.GetParent(pr1).Parent.Parent.FullName;
+                string p = Path.Combine(projectDirectory3 + @"\Biblioteka", "Loger.txt");
+                FileStream stream1 = new FileStream(p, FileMode.Append);
                 StreamWriter sw = new StreamWriter(stream1);
-
-                sw.WriteLine(item.ToString() + ";" + vrijednosti[i].timestamp.ToString() + ";" + vrijednosti[i].id + ";" + vrijednosti[i].potrosnja );
+                sw.WriteLine(poruka);
                 sw.Close();
                 stream1.Close();
-
-                Console.WriteLine("Poslata vrijednost: Code -" + item.ToString() + " Value - " + vrijednosti[i].timestamp.ToString() + " " + vrijednosti[i].id + " " + vrijednosti[i].potrosnja);
-
+                Bafer.Obrada(item, vrijednosti[i]);
+                
                 i++;
 
                 Thread.Sleep(2000);
