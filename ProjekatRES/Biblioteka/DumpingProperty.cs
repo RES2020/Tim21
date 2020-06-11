@@ -1,11 +1,11 @@
-﻿using Biblioteka;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DumpingBuffer
+namespace Biblioteka
 {
     public class DumpingProperty
     {
@@ -17,7 +17,5 @@ namespace DumpingBuffer
             kod = k;
             DumpingValue = v;
         }
-
-
     }
 }

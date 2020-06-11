@@ -1,9 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1062
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reader", "Reader\Reader.csproj", "{F4DEB84A-034C-421F-88B4-AD815B80BCA2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F190C0FF-5F7B-4D8A-80AF-86477BD7FDB8} = {F190C0FF-5F7B-4D8A-80AF-86477BD7FDB8}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Writer", "Writer\Writer.csproj", "{AF5EAD79-D2B9-4F6A-896F-90A5705A31C3}"
 EndProject
