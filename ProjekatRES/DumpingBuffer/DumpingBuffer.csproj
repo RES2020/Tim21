@@ -47,9 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bafer.cs" />
-    <Compile Include="CollectionDescription.cs" />
-    <Compile Include="DeltaCD.cs" />
-    <Compile Include="DumpingProperty.cs" />
+    <Compile Include="DumpingLogovanje.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
