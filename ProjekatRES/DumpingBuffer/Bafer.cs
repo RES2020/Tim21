@@ -12,81 +12,17 @@ namespace DumpingBuffer
     public class Bafer
     {
 
-        //public List<DumpingProperty> DumpingPropertyCollection { get; set; }
-        //History Hist { get; set; }
+        
         public List<CollectionDescription> CDS { get; set; }
         public int counter;
 
-        public void dodavanjeCD(int set, DumpingProperty data, ILogovanje Loger)
-        {
-            Random r = new Random();
-            int x = 0;
-            int y = 0;
-            string poruka = "";
-            string por2 = "";
 
-            foreach (CollectionDescription cd in CDS)
-            {
-                if (cd.dataset == set)
-                {
-                    y = 1;
-                    foreach (DumpingProperty dp in cd.DumpingPropertyCollection)
-                    {
-                        if (dp.kod.Equals(data.kod))
-                        {
-                            dp.DumpingValue = data.DumpingValue;
-                            x = 1;
-                            poruka= "Azurirana vrijednost u DumpingBufferu. Dataset: " + set + " Code: " + data.kod + " Value: " +  data.DumpingValue.timestamp + " " + data.DumpingValue.id + " " + data.DumpingValue.potrosnja + Environment.NewLine;
-                            Loger.Loguj(poruka);
-                            por2 = "Novi izgled CD-a sa ID:" + cd.id + " DataSet:" + cd.dataset + Environment.NewLine;
-                            foreach (DumpingProperty item in cd.DumpingPropertyCollection)
-                            {
-                                por2 += "Dumping Property:" + item.kod + " " + item.DumpingValue.timestamp + " " + item.DumpingValue.id + " " + item.DumpingValue.potrosnja + Environment.NewLine;
-                            }
-                            Loger.Loguj(por2);
-
-                        }
-
-                    }
-                    if (x == 0)
-                    {
-                        cd.DumpingPropertyCollection.Add(data);
-                        poruka= "Dodat je novi DumpingProperty u postojeci CD. Dataset: " + set + " Code: " + data.kod + " Value: " + data.DumpingValue.timestamp + " " + data.DumpingValue.id + " " + data.DumpingValue.potrosnja + Environment.NewLine;
-                        Loger.Loguj(poruka);
-                        por2 = "Novi izgled CD-a sa ID:" + cd.id + " DataSet:" + cd.dataset + Environment.NewLine;
-                        foreach (DumpingProperty item in cd.DumpingPropertyCollection)
-                        {
-                            por2 += "Dumping Property:" + item.kod + " " + item.DumpingValue.timestamp + " " + item.DumpingValue.id + " " + item.DumpingValue.potrosnja + Environment.NewLine;
-                        }
-                        Loger.Loguj(por2);
-                    }
-                }
-            }
-            if (y == 0)
-            {
-
-                List<DumpingProperty> dpc = new List<DumpingProperty>();
-                dpc.Add(data);
-                int id = r.Next(1000, 100000);
-                CollectionDescription novi = new CollectionDescription(id, set, dpc);
-                CDS.Add(novi);
-                poruka = "Dodat je novi CD. ID: " + id + " DataSet: " + set + Environment.NewLine;
-                Loger.Loguj(poruka);
-                por2 = "Novi izgled CD-a sa ID:" + novi.id + " DataSet:" + novi.dataset + Environment.NewLine;
-                foreach (DumpingProperty item in novi.DumpingPropertyCollection)
-                {
-                    por2 += "Dumping Property:" + item.kod + " " + item.DumpingValue.timestamp + " " + item.DumpingValue.id + " " + item.DumpingValue.potrosnja + Environment.NewLine;
-                }
-                Loger.Loguj(por2);
-            }
-
-        }
 
         public Bafer()
         {
             CDS = new List<CollectionDescription>();
             counter = 0;
-            //Hist = new History();
+            
         }
 
         public void Obrada(Code kod,Value vrijednost)
@@ -95,31 +31,18 @@ namespace DumpingBuffer
             int dataset = -1;
 
             DumpingProperty dp = new DumpingProperty(kod, vrijednost);
-
-            if(dp.kod == Code.CODE_ANALOG || dp.kod == Code.CODE_DIGITAL)
-            {
-                dataset = 1;
-            }else if(dp.kod == Code.CODE_CUSTOM || dp.kod == Code.CODE_LIMITSET)
-            {
-                dataset = 2;
-            }else if(dp.kod ==  Code.CODE_SINGLENODE || dp.kod==Code.CODE_MULTIPLENODE)
-            {
-                dataset = 3;
-            }else if(dp.kod == Code.CODE_CONSUMER || dp.kod == Code.CODE_SOURCE)
-            {
-                dataset = 4;
-            }
-            else
-            {
-                dataset = 5;
-            }
+            Dataset da = new Dataset();
+            dataset = da.GetDataset(kod);
+            
 
             string poruka = "DumpingBuffer primio podatak.Code = " + Environment.NewLine + dp.kod.ToString() + "Value = " + dp.DumpingValue.timestamp.ToString() + " " + dp.DumpingValue.id + " " + dp.DumpingValue.potrosnja + Environment.NewLine;
 
             ILogovanje Logovanje = new DumpingLogovanje();
             Logovanje.Loguj(poruka);
 
-            dodavanjeCD(dataset, dp,Logovanje);
+            
+            DodajCD dodajCD = new DodajCD();
+            dodajCD.Dodaj(dataset, dp, Logovanje, CDS);
             counter++;
 
             if (counter == 10)
@@ -182,10 +105,8 @@ namespace DumpingBuffer
                         }
                      }
                  }
-                foreach (DeltaCD d in DeltaCDS)
-                {
-                    //Hist.Recive(d);
-                }
+                BufferSender bufi = new BufferSender();
+                bufi.SendToHistory(DeltaCDS);
             }
         }
     }

@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 
 namespace Historical
 {
-    public class GetChanges
+    public class ValidateDataset
     {
-        public static Value GetChangesForInterval(Code kod)
+
+        public ValidateDataset()
         {
-            return; //kad skontam bazu nastavljam
+
         }
     }
 }
+       
