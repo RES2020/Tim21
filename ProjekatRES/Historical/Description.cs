@@ -8,9 +8,9 @@ namespace Historical
 {
     public class Description
     {
-        int id { get; set; }
-        List<HistoricalProperty> props { get; set; }
-        int dataset { get; set; }
+        public int id { get; set; }
+        public List<HistoricalProperty> props { get; set; }
+        public int dataset { get; set; }
 
         public Description(int a, List<HistoricalProperty> b, int c)
         {

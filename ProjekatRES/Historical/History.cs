@@ -16,32 +16,39 @@ namespace Historical
         }
         public void Recive(DeltaCD data)
         {
-            List<HistoricalProperty> forAdd = new List<HistoricalProperty>();
-            foreach (DumpingProperty item in data.Add.DumpingPropertyCollection)
-            {
-                HistoricalProperty pr = new HistoricalProperty(item.kod, item.DumpingValue);
-                forAdd.Add(pr);
-            }
-            Description descAdd = new Description(data.Add.id, forAdd, data.Add.dataset);
+            ILogovanje Logovanje = new HistoricalLogovanje();
+            //string p = "dataset u deltacd add " + data.Add.dataset + " kod1= " + data.Add.DumpingPropertyCollection[0].kod.ToString() + " kod2= " + data.Add.DumpingPropertyCollection[1].kod.ToString() + Environment.NewLine;
+            //Logovanje.Loguj(p);
 
-            List<HistoricalProperty> forUpdate = new List<HistoricalProperty>();
-            foreach (DumpingProperty item1 in data.Update.DumpingPropertyCollection)
+            using (RESBazaEntities context = new RESBazaEntities())
             {
-                HistoricalProperty pr1 = new HistoricalProperty(item1.kod, item1.DumpingValue);
-                forUpdate.Add(pr1);
-            }
-            Description descUpdate = new Description(data.Update.id, forUpdate, data.Update.dataset);
+                foreach (DumpingProperty d in data.Add.DumpingPropertyCollection)
+                {
+                    if (data.Add.dataset == 1)
+                    {
+                        Tabela1 ob1 = new Tabela1
+                        {
+                            Code = d.kod.ToString(),
+                            Timestamp = d.DumpingValue.timestamp.ToShortDateString(),
+                            ValueID = d.DumpingValue.id.ToString(),
+                            Potrosnja = d.DumpingValue.potrosnja.ToString(),
+                            VrijemeUpisa = DateTime.Now.ToShortTimeString()
 
-            List<HistoricalProperty> forDelete = new List<HistoricalProperty>();
-            foreach (DumpingProperty item2 in data.Delete.DumpingPropertyCollection)
-            {
-                HistoricalProperty pr2 = new HistoricalProperty(item2.kod, item2.DumpingValue);
-                forUpdate.Add(pr2);
+                        };
+                        context.Tabela1.Add(ob1);
+                        context.SaveChanges();
+                    }
+                }
             }
-            Description descDelete = new Description(data.Delete.id, forDelete, data.Delete.dataset);
+            PackInLD pakovanje = new PackInLD();
+            LD newData = pakovanje.GetLD(data);
 
-            List<Description> lista = new List<Description>();
-            LD newData = new LD(lista);
+            string poruka = "Primljen je novi DeltaCD sa TransactionID: " + data.transactionID + " i upakovan je u LD" +  Environment.NewLine;
+            Logovanje.Loguj(poruka);
+
+
+            ValidateDataset val = new ValidateDataset();
+            //val.Validate(newData);
         }
     }
 }

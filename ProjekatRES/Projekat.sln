@@ -1,20 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1169
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reader", "Reader\Reader.csproj", "{F4DEB84A-034C-421F-88B4-AD815B80BCA2}"
-	ProjectSection(ProjectDependencies) = postProject
-		{F190C0FF-5F7B-4D8A-80AF-86477BD7FDB8} = {F190C0FF-5F7B-4D8A-80AF-86477BD7FDB8}
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Writer", "Writer\Writer.csproj", "{AF5EAD79-D2B9-4F6A-896F-90A5705A31C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Historical", "Historical\Historical.csproj", "{3744BD51-B61D-4B92-9624-5E9AB9820743}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DumpingBuffer", "DumpingBuffer\DumpingBuffer.csproj", "{F190C0FF-5F7B-4D8A-80AF-86477BD7FDB8}"
-EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database", "Database\Database.sqlproj", "{50FB2C1F-A765-4E18-89C4-4F643855E5AE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteka", "Biblioteka\Biblioteka.csproj", "{63F97BDD-5394-4BD2-AB17-3DF9BB360F1F}"
 EndProject
@@ -24,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F4DEB84A-034C-421F-88B4-AD815B80BCA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F4DEB84A-034C-421F-88B4-AD815B80BCA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F4DEB84A-034C-421F-88B4-AD815B80BCA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F4DEB84A-034C-421F-88B4-AD815B80BCA2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AF5EAD79-D2B9-4F6A-896F-90A5705A31C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AF5EAD79-D2B9-4F6A-896F-90A5705A31C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF5EAD79-D2B9-4F6A-896F-90A5705A31C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -40,12 +29,6 @@ Global
 		{F190C0FF-5F7B-4D8A-80AF-86477BD7FDB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F190C0FF-5F7B-4D8A-80AF-86477BD7FDB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F190C0FF-5F7B-4D8A-80AF-86477BD7FDB8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{50FB2C1F-A765-4E18-89C4-4F643855E5AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{50FB2C1F-A765-4E18-89C4-4F643855E5AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{50FB2C1F-A765-4E18-89C4-4F643855E5AE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{50FB2C1F-A765-4E18-89C4-4F643855E5AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{50FB2C1F-A765-4E18-89C4-4F643855E5AE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{50FB2C1F-A765-4E18-89C4-4F643855E5AE}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{63F97BDD-5394-4BD2-AB17-3DF9BB360F1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{63F97BDD-5394-4BD2-AB17-3DF9BB360F1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63F97BDD-5394-4BD2-AB17-3DF9BB360F1F}.Release|Any CPU.ActiveCfg = Release|Any CPU

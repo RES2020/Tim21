@@ -14,7 +14,24 @@ namespace Writer
     {
         static void Main(string[] args)
         {
-            
+            //Console.WriteLine("Izaberite opciju: " + Environment.NewLine + "1. Manual write to history" + Environment.NewLine + "2. Get changes for interval" + Environment.NewLine);
+            //string opcija = Console.ReadLine();
+            //if (opcija.Equals("1"))
+            //{
+            //    Console.WriteLine("Izabrali ste prvu opciju - Manual write to history");
+            //    Console.ReadLine()
+            //        return;
+            //}
+            //else if(opcija.Equals("2"))
+            //{
+            //    Console.WriteLine("Izabrali ste drugu opciju - Get changes for interval");
+            //    return;
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Greska");
+            //    return;
+            //}
 
             string pr = Directory.GetCurrentDirectory();
             string projectDirectory = Directory.GetParent(pr).Parent.FullName;
@@ -44,8 +61,8 @@ namespace Writer
 
             
 
-            Console.WriteLine("Saljem podatke DumpingBafferu...za 5 sec");
-            Thread.Sleep(5000);
+            Console.WriteLine("Saljem podatke DumpingBafferu...");
+            //Thread.Sleep(5000);
 
 
             Bafer baf = new Bafer();
