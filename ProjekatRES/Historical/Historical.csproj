@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3744BD51-B61D-4B92-9624-5E9AB9820743}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>Historical</RootNamespace>
     <AssemblyName>Historical</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -37,10 +37,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -60,50 +60,20 @@
     <Compile Include="HistoricalProperty.cs" />
     <Compile Include="History.cs" />
     <Compile Include="LD.cs" />
+    <Compile Include="Migrations\202006131251147_CreatePodaci.cs" />
+    <Compile Include="Migrations\202006131251147_CreatePodaci.Designer.cs">
+      <DependentUpon>202006131251147_CreatePodaci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PackInLD.cs" />
+    <Compile Include="Podaci.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RESBazaModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RESBazaModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RESBazaModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RESBazaModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RESBazaModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RESBazaModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Tabela1.cs">
-      <DependentUpon>RESBazaModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tabela2.cs">
-      <DependentUpon>RESBazaModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tabela3.cs">
-      <DependentUpon>RESBazaModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tabela4.cs">
-      <DependentUpon>RESBazaModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tabela5.cs">
-      <DependentUpon>RESBazaModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="ValidateDataset.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <EntityDeploy Include="RESBazaModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>RESBazaModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="RESBazaModel.edmx.diagram">
-      <DependentUpon>RESBazaModel.edmx</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Biblioteka\Biblioteka.csproj">
@@ -115,16 +85,9 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="RESBazaModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RESBazaModel.edmx</DependentUpon>
-      <LastGenOutput>RESBazaModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="RESBazaModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RESBazaModel.edmx</DependentUpon>
-      <LastGenOutput>RESBazaModel.cs</LastGenOutput>
-    </Content>
+    <EmbeddedResource Include="Migrations\202006131251147_CreatePodaci.resx">
+      <DependentUpon>202006131251147_CreatePodaci.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -14,6 +14,7 @@ namespace Writer
     {
         static void Main(string[] args)
         {
+            
             //Console.WriteLine("Izaberite opciju: " + Environment.NewLine + "1. Manual write to history" + Environment.NewLine + "2. Get changes for interval" + Environment.NewLine);
             //string opcija = Console.ReadLine();
             //if (opcija.Equals("1"))
