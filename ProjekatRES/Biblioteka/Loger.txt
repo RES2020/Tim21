@@ -1,1 +1,256 @@
-﻿
+﻿Writer poslao podatke: Code: CODE_ANALOG Value: 1/2/2019 12:00:00 AM 12345 2
+
+DumpingBuffer primio podatak.Code = 
+CODE_ANALOGValue = 1/2/2019 12:00:00 AM 12345 2
+
+Dodat je novi CD. ID: 60274 DataSet: 1
+
+Novi izgled CD-a sa ID:60274 DataSet:1
+Dumping Property:CODE_ANALOG 1/2/2019 12:00:00 AM 12345 2
+
+Writer poslao podatke: Code: CODE_DIGITAL Value: 4/4/2020 12:00:00 AM 53521 98
+
+DumpingBuffer primio podatak.Code = 
+CODE_DIGITALValue = 4/4/2020 12:00:00 AM 53521 98
+
+Dodat je novi DumpingProperty u postojeci CD. Dataset: 1 Code: CODE_DIGITAL Value: 4/4/2020 12:00:00 AM 53521 98
+
+Novi izgled CD-a sa ID:60274 DataSet:1
+Dumping Property:CODE_ANALOG 1/2/2019 12:00:00 AM 12345 2
+Dumping Property:CODE_DIGITAL 4/4/2020 12:00:00 AM 53521 98
+
+Writer poslao podatke: Code: CODE_ANALOG Value: 4/26/2020 12:00:00 AM 11122 5
+
+DumpingBuffer primio podatak.Code = 
+CODE_ANALOGValue = 4/26/2020 12:00:00 AM 11122 5
+
+Azurirana vrijednost u DumpingBufferu. Dataset: 1 Code: CODE_ANALOG Value: 4/26/2020 12:00:00 AM 11122 5
+
+Novi izgled CD-a sa ID:60274 DataSet:1
+Dumping Property:CODE_ANALOG 4/26/2020 12:00:00 AM 11122 5
+Dumping Property:CODE_DIGITAL 4/4/2020 12:00:00 AM 53521 98
+
+Writer poslao podatke: Code: CODE_CUSTOM Value: 5/14/2019 12:00:00 AM 44444 9.7
+
+DumpingBuffer primio podatak.Code = 
+CODE_CUSTOMValue = 5/14/2019 12:00:00 AM 44444 9.7
+
+Dodat je novi CD. ID: 40415 DataSet: 2
+
+Novi izgled CD-a sa ID:40415 DataSet:2
+Dumping Property:CODE_CUSTOM 5/14/2019 12:00:00 AM 44444 9.7
+
+Writer poslao podatke: Code: CODE_CONSUMER Value: 11/28/2020 12:00:00 AM 12321 254.4
+
+DumpingBuffer primio podatak.Code = 
+CODE_CONSUMERValue = 11/28/2020 12:00:00 AM 12321 254.4
+
+Dodat je novi CD. ID: 64274 DataSet: 4
+
+Novi izgled CD-a sa ID:64274 DataSet:4
+Dumping Property:CODE_CONSUMER 11/28/2020 12:00:00 AM 12321 254.4
+
+Writer poslao podatke: Code: CODE_LIMITSET Value: 4/2/2013 12:00:00 AM 44432 23
+
+DumpingBuffer primio podatak.Code = 
+CODE_LIMITSETValue = 4/2/2013 12:00:00 AM 44432 23
+
+Dodat je novi DumpingProperty u postojeci CD. Dataset: 2 Code: CODE_LIMITSET Value: 4/2/2013 12:00:00 AM 44432 23
+
+Novi izgled CD-a sa ID:40415 DataSet:2
+Dumping Property:CODE_CUSTOM 5/14/2019 12:00:00 AM 44444 9.7
+Dumping Property:CODE_LIMITSET 4/2/2013 12:00:00 AM 44432 23
+
+Writer poslao podatke: Code: CODE_SOURCE Value: 4/2/2013 12:00:00 AM 44432 24
+
+DumpingBuffer primio podatak.Code = 
+CODE_SOURCEValue = 4/2/2013 12:00:00 AM 44432 24
+
+Dodat je novi DumpingProperty u postojeci CD. Dataset: 4 Code: CODE_SOURCE Value: 4/2/2013 12:00:00 AM 44432 24
+
+Novi izgled CD-a sa ID:64274 DataSet:4
+Dumping Property:CODE_CONSUMER 11/28/2020 12:00:00 AM 12321 254.4
+Dumping Property:CODE_SOURCE 4/2/2013 12:00:00 AM 44432 24
+
+Writer poslao podatke: Code: CODE_SINGLENODE Value: 5/3/2014 12:00:00 AM 12121 23
+
+DumpingBuffer primio podatak.Code = 
+CODE_SINGLENODEValue = 5/3/2014 12:00:00 AM 12121 23
+
+Dodat je novi CD. ID: 79937 DataSet: 3
+
+Novi izgled CD-a sa ID:79937 DataSet:3
+Dumping Property:CODE_SINGLENODE 5/3/2014 12:00:00 AM 12121 23
+
+Writer poslao podatke: Code: CODE_MULTIPLENODE Value: 3/20/2019 12:00:00 AM 88888 223.1
+
+DumpingBuffer primio podatak.Code = 
+CODE_MULTIPLENODEValue = 3/20/2019 12:00:00 AM 88888 223.1
+
+Dodat je novi DumpingProperty u postojeci CD. Dataset: 3 Code: CODE_MULTIPLENODE Value: 3/20/2019 12:00:00 AM 88888 223.1
+
+Novi izgled CD-a sa ID:79937 DataSet:3
+Dumping Property:CODE_SINGLENODE 5/3/2014 12:00:00 AM 12121 23
+Dumping Property:CODE_MULTIPLENODE 3/20/2019 12:00:00 AM 88888 223.1
+
+Writer poslao podatke: Code: CODE_CUSTOM Value: 5/14/2019 12:00:00 AM 44444 12
+
+DumpingBuffer primio podatak.Code = 
+CODE_CUSTOMValue = 5/14/2019 12:00:00 AM 44444 12
+
+Azurirana vrijednost u DumpingBufferu. Dataset: 2 Code: CODE_CUSTOM Value: 5/14/2019 12:00:00 AM 44444 12
+
+Novi izgled CD-a sa ID:40415 DataSet:2
+Dumping Property:CODE_CUSTOM 5/14/2019 12:00:00 AM 44444 12
+Dumping Property:CODE_LIMITSET 4/2/2013 12:00:00 AM 44432 23
+
+Primljeno 10 podataka! Pocinje pakovanje.
+
+Ubacen Add u DC. ID:8263
+CODE_ANALOG 4/26/2020 12:00:00 AM 11122 5
+CODE_DIGITAL 4/4/2020 12:00:00 AM 53521 98
+
+Ubacen Update u DC. ID:8263
+CODE_CUSTOM 5/14/2019 12:00:00 AM 44444 12
+CODE_LIMITSET 4/2/2013 12:00:00 AM 44432 23
+
+Ubacen Delete u DC. ID:8263
+CODE_CONSUMER 11/28/2020 12:00:00 AM 12321 254.4
+CODE_SOURCE 4/2/2013 12:00:00 AM 44432 24
+
+Ubacen Add u DC. ID:6159
+CODE_SINGLENODE 5/3/2014 12:00:00 AM 12121 23
+CODE_MULTIPLENODE 3/20/2019 12:00:00 AM 88888 223.1
+
+Primljen je novi DeltaCD sa TransactionID: 8263 i upakovan je u LD
+
+Primljen je novi DeltaCD sa TransactionID: 6159 i upakovan je u LD
+
+Writer poslao podatke: Code: CODE_ANALOG Value: 1/2/2019 12:00:00 AM 12345 2
+
+DumpingBuffer primio podatak.Code = 
+CODE_ANALOGValue = 1/2/2019 12:00:00 AM 12345 2
+
+Dodat je novi CD. ID: 64449 DataSet: 1
+
+Novi izgled CD-a sa ID:64449 DataSet:1
+Dumping Property:CODE_ANALOG 1/2/2019 12:00:00 AM 12345 2
+
+Writer poslao podatke: Code: CODE_DIGITAL Value: 4/4/2020 12:00:00 AM 53521 98
+
+DumpingBuffer primio podatak.Code = 
+CODE_DIGITALValue = 4/4/2020 12:00:00 AM 53521 98
+
+Dodat je novi DumpingProperty u postojeci CD. Dataset: 1 Code: CODE_DIGITAL Value: 4/4/2020 12:00:00 AM 53521 98
+
+Novi izgled CD-a sa ID:64449 DataSet:1
+Dumping Property:CODE_ANALOG 1/2/2019 12:00:00 AM 12345 2
+Dumping Property:CODE_DIGITAL 4/4/2020 12:00:00 AM 53521 98
+
+Writer poslao podatke: Code: CODE_ANALOG Value: 4/26/2020 12:00:00 AM 11122 5
+
+DumpingBuffer primio podatak.Code = 
+CODE_ANALOGValue = 4/26/2020 12:00:00 AM 11122 5
+
+Azurirana vrijednost u DumpingBufferu. Dataset: 1 Code: CODE_ANALOG Value: 4/26/2020 12:00:00 AM 11122 5
+
+Novi izgled CD-a sa ID:64449 DataSet:1
+Dumping Property:CODE_ANALOG 4/26/2020 12:00:00 AM 11122 5
+Dumping Property:CODE_DIGITAL 4/4/2020 12:00:00 AM 53521 98
+
+Writer poslao podatke: Code: CODE_CUSTOM Value: 5/14/2019 12:00:00 AM 44444 9.7
+
+DumpingBuffer primio podatak.Code = 
+CODE_CUSTOMValue = 5/14/2019 12:00:00 AM 44444 9.7
+
+Dodat je novi CD. ID: 63914 DataSet: 2
+
+Novi izgled CD-a sa ID:63914 DataSet:2
+Dumping Property:CODE_CUSTOM 5/14/2019 12:00:00 AM 44444 9.7
+
+Writer poslao podatke: Code: CODE_CONSUMER Value: 11/28/2020 12:00:00 AM 12321 254.4
+
+DumpingBuffer primio podatak.Code = 
+CODE_CONSUMERValue = 11/28/2020 12:00:00 AM 12321 254.4
+
+Dodat je novi CD. ID: 24294 DataSet: 4
+
+Novi izgled CD-a sa ID:24294 DataSet:4
+Dumping Property:CODE_CONSUMER 11/28/2020 12:00:00 AM 12321 254.4
+
+Writer poslao podatke: Code: CODE_LIMITSET Value: 4/2/2013 12:00:00 AM 44432 23
+
+DumpingBuffer primio podatak.Code = 
+CODE_LIMITSETValue = 4/2/2013 12:00:00 AM 44432 23
+
+Dodat je novi DumpingProperty u postojeci CD. Dataset: 2 Code: CODE_LIMITSET Value: 4/2/2013 12:00:00 AM 44432 23
+
+Novi izgled CD-a sa ID:63914 DataSet:2
+Dumping Property:CODE_CUSTOM 5/14/2019 12:00:00 AM 44444 9.7
+Dumping Property:CODE_LIMITSET 4/2/2013 12:00:00 AM 44432 23
+
+Writer poslao podatke: Code: CODE_SOURCE Value: 4/2/2013 12:00:00 AM 44432 24
+
+DumpingBuffer primio podatak.Code = 
+CODE_SOURCEValue = 4/2/2013 12:00:00 AM 44432 24
+
+Dodat je novi DumpingProperty u postojeci CD. Dataset: 4 Code: CODE_SOURCE Value: 4/2/2013 12:00:00 AM 44432 24
+
+Novi izgled CD-a sa ID:24294 DataSet:4
+Dumping Property:CODE_CONSUMER 11/28/2020 12:00:00 AM 12321 254.4
+Dumping Property:CODE_SOURCE 4/2/2013 12:00:00 AM 44432 24
+
+Writer poslao podatke: Code: CODE_SINGLENODE Value: 5/3/2014 12:00:00 AM 12121 23
+
+DumpingBuffer primio podatak.Code = 
+CODE_SINGLENODEValue = 5/3/2014 12:00:00 AM 12121 23
+
+Dodat je novi CD. ID: 56156 DataSet: 3
+
+Novi izgled CD-a sa ID:56156 DataSet:3
+Dumping Property:CODE_SINGLENODE 5/3/2014 12:00:00 AM 12121 23
+
+Writer poslao podatke: Code: CODE_MULTIPLENODE Value: 3/20/2019 12:00:00 AM 88888 223.1
+
+DumpingBuffer primio podatak.Code = 
+CODE_MULTIPLENODEValue = 3/20/2019 12:00:00 AM 88888 223.1
+
+Dodat je novi DumpingProperty u postojeci CD. Dataset: 3 Code: CODE_MULTIPLENODE Value: 3/20/2019 12:00:00 AM 88888 223.1
+
+Novi izgled CD-a sa ID:56156 DataSet:3
+Dumping Property:CODE_SINGLENODE 5/3/2014 12:00:00 AM 12121 23
+Dumping Property:CODE_MULTIPLENODE 3/20/2019 12:00:00 AM 88888 223.1
+
+Writer poslao podatke: Code: CODE_CUSTOM Value: 5/14/2019 12:00:00 AM 44444 12
+
+DumpingBuffer primio podatak.Code = 
+CODE_CUSTOMValue = 5/14/2019 12:00:00 AM 44444 12
+
+Azurirana vrijednost u DumpingBufferu. Dataset: 2 Code: CODE_CUSTOM Value: 5/14/2019 12:00:00 AM 44444 12
+
+Novi izgled CD-a sa ID:63914 DataSet:2
+Dumping Property:CODE_CUSTOM 5/14/2019 12:00:00 AM 44444 12
+Dumping Property:CODE_LIMITSET 4/2/2013 12:00:00 AM 44432 23
+
+Primljeno 10 podataka! Pocinje pakovanje.
+
+Ubacen Add u DC. ID:12438
+CODE_ANALOG 4/26/2020 12:00:00 AM 11122 5
+CODE_DIGITAL 4/4/2020 12:00:00 AM 53521 98
+
+Ubacen Update u DC. ID:12438
+CODE_CUSTOM 5/14/2019 12:00:00 AM 44444 12
+CODE_LIMITSET 4/2/2013 12:00:00 AM 44432 23
+
+Ubacen Delete u DC. ID:12438
+CODE_CONSUMER 11/28/2020 12:00:00 AM 12321 254.4
+CODE_SOURCE 4/2/2013 12:00:00 AM 44432 24
+
+Ubacen Add u DC. ID:79242
+CODE_SINGLENODE 5/3/2014 12:00:00 AM 12121 23
+CODE_MULTIPLENODE 3/20/2019 12:00:00 AM 88888 223.1
+
+Primljen je novi DeltaCD sa TransactionID: 12438 i upakovan je u LD
+
+Primljen je novi DeltaCD sa TransactionID: 79242 i upakovan je u LD
+
