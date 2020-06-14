@@ -107,6 +107,8 @@ namespace DumpingBuffer
                  }
                 BufferSender bufi = new BufferSender();
                 bufi.SendToHistory(DeltaCDS);
+                DeltaCDS.Clear();
+                CDS.Clear();
             }
         }
     }

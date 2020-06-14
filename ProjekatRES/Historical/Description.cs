@@ -11,12 +11,14 @@ namespace Historical
         public int id { get; set; }
         public List<HistoricalProperty> props { get; set; }
         public int dataset { get; set; }
+        public string use { get; set; }
 
-        public Description(int a, List<HistoricalProperty> b, int c)
+        public Description(int a, List<HistoricalProperty> b, int c,string u)
         {
             id = a;
             props = b;
             dataset = c;
+            use = u;
         }
     }
 }

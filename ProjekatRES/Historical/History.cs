@@ -9,80 +9,152 @@ namespace Historical
 {
     public class History
     {
-        public List<Description> desc { get; set; }
+        public LD descs { get; set; }
+
         public History()
         {
-            desc = new List<Description>();
+            descs =new LD(new List<Description>());
         }
         public void Recive(DeltaCD data)
         {
-            
+
+            PackInLD pakovanje = new PackInLD();
+
+            pakovanje.GetLD(data, descs);
+
             ILogovanje Logovanje = new HistoricalLogovanje();
             //string p = "dataset u deltacd add " + data.Add.dataset + " kod1= " + data.Add.DumpingPropertyCollection[0].kod.ToString() + " kod2= " + data.Add.DumpingPropertyCollection[1].kod.ToString() + Environment.NewLine;
             //Logovanje.Loguj(p);
 
-            var context = new PodaciDBContext();
-
-            //Podaci p = (from po in context.Tabela where po.Code=="CODE_ANALOG" select po).Single();
-            //p.Consumption = "1010";
-            //context.SaveChanges();
-           foreach(DumpingProperty dup in data.Add.DumpingPropertyCollection)
-            {
-                var podatak = new Podaci
-                {
-
-                    Code = dup.kod.ToString(),
-                    Timestamp = dup.DumpingValue.timestamp.ToShortDateString(),
-                    AreaID = dup.DumpingValue.id.ToString(),
-                    Consumption = dup.DumpingValue.potrosnja.ToString(),
-                    Time = DateTime.Now.ToShortTimeString()
-
-                };
-                context.Tabela.Add(podatak);
-                context.SaveChanges();
-            }
-
-            foreach (DumpingProperty dup in data.Update.DumpingPropertyCollection)
-            {
-                var podatak = new Podaci
-                {
-
-                    Code = dup.kod.ToString(),
-                    Timestamp = dup.DumpingValue.timestamp.ToShortDateString(),
-                    AreaID = dup.DumpingValue.id.ToString(),
-                    Consumption = dup.DumpingValue.potrosnja.ToString(),
-                    Time = DateTime.Now.ToShortTimeString()
-
-                };
-                context.Tabela.Add(podatak);
-                context.SaveChanges();
-            }
-
-            foreach (DumpingProperty dup in data.Delete.DumpingPropertyCollection)
-            {
-                var podatak = new Podaci
-                {
-
-                    Code = dup.kod.ToString(),
-                    Timestamp = dup.DumpingValue.timestamp.ToShortDateString(),
-                    AreaID = dup.DumpingValue.id.ToString(),
-                    Consumption = dup.DumpingValue.potrosnja.ToString(),
-                    Time = DateTime.Now.ToShortTimeString()
-
-                };
-                context.Tabela.Add(podatak);
-                context.SaveChanges();
-            }
-
-            PackInLD pakovanje = new PackInLD();
-            LD newData = pakovanje.GetLD(data);
-
-            string poruka = "Primljen je novi DeltaCD sa TransactionID: " + data.transactionID + " i upakovan je u LD" +  Environment.NewLine;
+            string poruka = "Primljen je novi DeltaCD sa TransactionID: " + data.transactionID + " i upakovan je u LD" + Environment.NewLine;
             Logovanje.Loguj(poruka);
 
+            var context = new PodaciDBContext();
 
-            ValidateDataset val = new ValidateDataset();
-            //val.Validate(newData);
+            foreach (Description d in descs.list)
+            {
+                if (d.use == "ADD")
+                {
+                    string k = d.props[0].kod.ToString();
+                    Podaci p = context.Tabela.FirstOrDefault(i => i.Code == k);
+
+                    if (p == null)
+                    {
+                        var podatak = new Podaci
+                        {
+                            Code = d.props[0].kod.ToString(),
+                            Timestamp = d.props[0].HistoricalValue.timestamp.ToShortDateString(),
+                            AreaID = d.props[0].HistoricalValue.id.ToString(),
+                            Consumption = d.props[0].HistoricalValue.potrosnja.ToString(),
+                            Time = DateTime.Now.ToShortTimeString()
+                        };
+                        context.Tabela.Add(podatak);
+                        context.SaveChanges();
+                    }
+                   
+
+
+                    string k1 = d.props[1].kod.ToString();
+                    Podaci p1 = context.Tabela.FirstOrDefault(i => i.Code == k1);
+                    if (p1 == null)
+                    {
+                        var podatak = new Podaci
+                        {
+                            Code = d.props[1].kod.ToString(),
+                            Timestamp = d.props[1].HistoricalValue.timestamp.ToShortDateString(),
+                            AreaID = d.props[1].HistoricalValue.id.ToString(),
+                            Consumption = d.props[1].HistoricalValue.potrosnja.ToString(),
+                            Time = DateTime.Now.ToShortTimeString()
+                        };
+                        context.Tabela.Add(podatak);
+                        context.SaveChanges();
+                    }
+                    
+                }
+                else if (d.use == "UPDATE")
+                {
+                    if (d.props.Count()!=0 && d.props!=null)
+                    {
+                        string k = d.props[0].kod.ToString();
+                        Podaci p = context.Tabela.FirstOrDefault(i => i.Code == k);
+
+                        if (p != null)
+                        {
+                            if (d.props[0].kod == Code.CODE_DIGITAL)
+                            {
+                                p.Timestamp = d.props[0].HistoricalValue.timestamp.ToShortDateString();
+                                p.AreaID = d.props[0].HistoricalValue.id.ToString();
+                                p.Consumption = d.props[0].HistoricalValue.potrosnja.ToString();
+                                p.Time = DateTime.Now.ToShortTimeString();
+                                context.SaveChanges();
+                            }
+                            else
+                            {
+                                if ((Convert.ToDouble(p.Consumption) + (Convert.ToDouble(p.Consumption)) / 50) < d.props[0].HistoricalValue.potrosnja)
+                                {
+                                    p.Timestamp = d.props[0].HistoricalValue.timestamp.ToShortDateString();
+                                    p.AreaID = d.props[0].HistoricalValue.id.ToString();
+                                    p.Consumption = d.props[0].HistoricalValue.potrosnja.ToString();
+                                    p.Time = DateTime.Now.ToShortTimeString();
+                                    context.SaveChanges();
+                                }
+                            }
+                        }
+
+                        string k1 = d.props[1].kod.ToString();
+                        Podaci p1 = context.Tabela.FirstOrDefault(i => i.Code == k1);
+
+                        if (p1 != null)
+                        {
+                            if (d.props[1].kod == Code.CODE_DIGITAL)
+                            {
+                                p1.Timestamp = d.props[1].HistoricalValue.timestamp.ToShortDateString();
+                                p1.AreaID = d.props[1].HistoricalValue.id.ToString();
+                                p1.Consumption = d.props[1].HistoricalValue.potrosnja.ToString();
+                                p1.Time = DateTime.Now.ToShortTimeString();
+                                context.SaveChanges();
+                            }
+                            else
+                            {
+                                if ((Convert.ToDouble(p1.Consumption) + (Convert.ToDouble(p1.Consumption)) / 50) < d.props[1].HistoricalValue.potrosnja)
+                                {
+                                    p1.Timestamp = d.props[1].HistoricalValue.timestamp.ToShortDateString();
+                                    p1.AreaID = d.props[1].HistoricalValue.id.ToString();
+                                    p1.Consumption = d.props[1].HistoricalValue.potrosnja.ToString();
+                                    p1.Time = DateTime.Now.ToShortTimeString();
+                                    context.SaveChanges();
+                                }
+                            }
+                        }
+                    }
+                }
+                else if (d.use=="DELETE")
+                {
+                    if (d.props.Count() != 0 && d.props != null)
+                    {
+                        string k = d.props[0].kod.ToString();
+                        Podaci p = context.Tabela.FirstOrDefault(i => i.Code == k);
+
+                        if (p != null)
+                        {
+                            context.Tabela.Remove(p);
+                            context.SaveChanges();
+                        }
+
+                        string k1 = d.props[1].kod.ToString();
+                        Podaci p1 = context.Tabela.FirstOrDefault(i => i.Code == k1);
+
+                        if (p1 != null)
+                        {
+                            context.Tabela.Remove(p1);
+                            context.SaveChanges();
+                        }
+                    }
+                }
+            }
+
+            descs.list.Clear();
+
         }
 
         public void CleanTable(PodaciDBContext context)
@@ -90,5 +162,9 @@ namespace Historical
             context.Database.ExecuteSqlCommand("TRUNCATE TABLE Podacis");
             
         }
+
+       
     }
+
+   
 }
