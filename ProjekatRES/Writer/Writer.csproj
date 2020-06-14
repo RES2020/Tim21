@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sending.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -70,9 +71,10 @@
       <Project>{f190c0ff-5f7b-4d8a-80af-86477bd7fdb8}</Project>
       <Name>DumpingBuffer</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DataW.txt" />
+    <ProjectReference Include="..\Historical\Historical.csproj">
+      <Project>{3744bd51-b61d-4b92-9624-5e9ab9820743}</Project>
+      <Name>Historical</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

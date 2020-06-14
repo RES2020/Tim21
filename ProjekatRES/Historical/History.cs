@@ -51,35 +51,7 @@ namespace Historical
                         context.Tabela.Add(podatak);
                         context.SaveChanges();
                     }
-                    //else
-                    //{
-                    //    if (d.props[0].kod == Code.CODE_DIGITAL)
-                    //    {
-                    //        var podatak = new Podaci
-                    //        {
-                    //            Code = d.props[0].kod.ToString(),
-                    //            Timestamp = d.props[0].HistoricalValue.timestamp.ToShortDateString(),
-                    //            AreaID = d.props[0].HistoricalValue.id.ToString(),
-                    //            Consumption = d.props[0].HistoricalValue.potrosnja.ToString(),
-                    //            Time = DateTime.Now.ToShortTimeString()
-                    //        };
-                    //        context.Tabela.Add(podatak);
-                    //        context.SaveChanges();
-                    //    }
-                    //    else if ((Convert.ToDouble(p.Consumption) + (Convert.ToDouble(p.Consumption)) / 50) < d.props[0].HistoricalValue.potrosnja)
-                    //    {
-                    //        var podatak = new Podaci
-                    //        {
-                    //            Code = d.props[0].kod.ToString(),
-                    //            Timestamp = d.props[0].HistoricalValue.timestamp.ToShortDateString(),
-                    //            AreaID = d.props[0].HistoricalValue.id.ToString(),
-                    //            Consumption = d.props[0].HistoricalValue.potrosnja.ToString(),
-                    //            Time = DateTime.Now.ToShortTimeString()
-                    //        };
-                    //        context.Tabela.Add(podatak);
-                    //        context.SaveChanges();
-                    //    }
-                    //}
+                   
 
 
                     string k1 = d.props[1].kod.ToString();
@@ -97,35 +69,7 @@ namespace Historical
                         context.Tabela.Add(podatak);
                         context.SaveChanges();
                     }
-                    //else
-                    //{
-                    //    if (d.props[1].kod == Code.CODE_DIGITAL)
-                    //    {
-                    //        var podatak = new Podaci
-                    //        {
-                    //            Code = d.props[1].kod.ToString(),
-                    //            Timestamp = d.props[1].HistoricalValue.timestamp.ToShortDateString(),
-                    //            AreaID = d.props[1].HistoricalValue.id.ToString(),
-                    //            Consumption = d.props[1].HistoricalValue.potrosnja.ToString(),
-                    //            Time = DateTime.Now.ToShortTimeString()
-                    //        };
-                    //        context.Tabela.Add(podatak);
-                    //        context.SaveChanges();
-                    //    }
-                    //    if ((Convert.ToDouble(p1.Consumption) + (Convert.ToDouble(p1.Consumption)) / 50) < d.props[1].HistoricalValue.potrosnja)
-                    //    {
-                    //        var podatak = new Podaci
-                    //        {
-                    //            Code = d.props[1].kod.ToString(),
-                    //            Timestamp = d.props[1].HistoricalValue.timestamp.ToShortDateString(),
-                    //            AreaID = d.props[1].HistoricalValue.id.ToString(),
-                    //            Consumption = d.props[1].HistoricalValue.potrosnja.ToString(),
-                    //            Time = DateTime.Now.ToShortTimeString()
-                    //        };
-                    //        context.Tabela.Add(podatak);
-                    //        context.SaveChanges();
-                    //    }
-                    //}
+                    
                 }
                 else if (d.use == "UPDATE")
                 {
@@ -218,5 +162,9 @@ namespace Historical
             context.Database.ExecuteSqlCommand("TRUNCATE TABLE Podacis");
             
         }
+
+       
     }
+
+   
 }

@@ -58,10 +58,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Description.cs" />
+    <Compile Include="Get.cs" />
     <Compile Include="HistoricalLogovanje.cs" />
     <Compile Include="HistoricalProperty.cs" />
     <Compile Include="History.cs" />
     <Compile Include="LD.cs" />
+    <Compile Include="Manual.cs" />
     <Compile Include="Migrations\202006131251147_CreatePodaci.cs" />
     <Compile Include="Migrations\202006131251147_CreatePodaci.Designer.cs">
       <DependentUpon>202006131251147_CreatePodaci.cs</DependentUpon>
