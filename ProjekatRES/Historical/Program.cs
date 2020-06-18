@@ -10,6 +10,8 @@ namespace Historical
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Zasad ne radim nista!");
+            Console.Read();
         }
-    }
+        }
 }

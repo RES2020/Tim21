@@ -1,0 +1,12 @@
+DumpingBuffer primio podatak.Code = 
+CODE_ANALOGValue = 1/2/2019 12:00:00 AM 12345 2
+Writer poslao podatke: Code: CODE_ANALOG Value: 1/2/2019 12:00:00 AM 12345 2
+DumpingBuffer primio podatak.Code = 
+CODE_DIGITALValue = 4/4/2020 12:00:00 AM 53521 98
+Writer poslao podatke: Code: CODE_DIGITAL Value: 4/4/2020 12:00:00 AM 53521 98
+DumpingBuffer primio podatak.Code = 
+CODE_CUSTOMValue = 5/14/2019 12:00:00 AM 44444 9.7
+Writer poslao podatke: Code: CODE_CUSTOM Value: 5/14/2019 12:00:00 AM 44444 9.7
+DumpingBuffer primio podatak.Code = 
+CODE_CONSUMERValue = 11/28/2020 12:00:00 AM 12321 254.4
+Writer poslao podatke: Code: CODE_CONSUMER Value: 11/28/2020 12:00:00 AM 12321 254.4

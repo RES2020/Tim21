@@ -4,12 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DumpingBuffer
+namespace Historical
 {
-    class Program
+    public class LD
     {
-        static void Main(string[] args)
+        public List<Description> list { get; set; }
+
+        public LD(List<Description> a)
         {
+            list = a;
         }
     }
 }
