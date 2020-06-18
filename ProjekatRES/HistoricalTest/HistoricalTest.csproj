@@ -4,19 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AF5EAD79-D2B9-4F6A-896F-90A5705A31C3}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Writer</RootNamespace>
-    <AssemblyName>Writer</AssemblyName>
+    <ProjectGuid>{AB2C3B5F-88F9-4353-B34B-275D20CC42CF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HistoricalTest</RootNamespace>
+    <AssemblyName>HistoricalTest</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -35,16 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="nunit.framework, Version=2.7.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.2.7.1\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -54,13 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="DescriptionTest.cs" />
+    <Compile Include="HistoricalLogovanjeTest.cs" />
+    <Compile Include="HistoricalPropertyTest.cs" />
+    <Compile Include="LDTest.cs" />
+    <Compile Include="ManualTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Provjera.cs" />
-    <Compile Include="Sending.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -68,12 +59,8 @@
       <Project>{63f97bdd-5394-4bd2-ab17-3df9bb360f1f}</Project>
       <Name>Biblioteka</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DumpingBuffer\DumpingBuffer.csproj">
-      <Project>{f190c0ff-5f7b-4d8a-80af-86477bd7fdb8}</Project>
-      <Name>DumpingBuffer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Historical\Historical.csproj">
-      <Project>{3744bd51-b61d-4b92-9624-5e9ab9820743}</Project>
+      <Project>{3744BD51-B61D-4B92-9624-5E9AB9820743}</Project>
       <Name>Historical</Name>
     </ProjectReference>
   </ItemGroup>

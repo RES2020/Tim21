@@ -9,5 +9,6 @@ namespace Biblioteka
     public interface ILogovanje
     {
         void Loguj(string poruka);
+        void Obrisi();
     }
 }

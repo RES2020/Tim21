@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Biblioteka;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,11 @@ namespace Historical
 
         public Manual(string k, string d,string i,string p)
         {
+           
+
+           
+
+
             kod = k;
             id = i;
             datum = d;
